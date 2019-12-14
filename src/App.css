@@ -1,5 +1,14 @@
+.body {
+  background-color: antiquewhite;
+  align-items: center;
+  align-content: center;
+}
+
 .App {
-  text-align: center;
+  align-items: center;
+  align-content: center;
+  background-color: antiquewhite;
+  font-family: "Helvetica Neue";
 }
 
 .App-logo {
@@ -15,7 +24,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;

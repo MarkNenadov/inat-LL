@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { LifeList } from "./components/LifeList";
+import { csvData } from "./data/LifeListData";
+//@ts-ignore
+import CSV from "csv-string";
+import { Species } from './model/Species';
+
+const parseSpecies = (csvData: string) => {
+    let result : Species[] = [];
+    CSV.parse( csvData ).forEach( (row : any) => {
+        if ( row[0] !== "kingdom" ) {
+            const species = new Species( row );
+
+            if ( species.name.includes( " ") ) {
+                result.push( species )
+            }
+        }
+    });
+    return result;
+};
 
 const App: React.FC = () => {
+    const speciesList = parseSpecies( csvData );
+    console.log( speciesList );
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LifeList fullName={ "Mark Nenadov" } speciesList={ speciesList } />
     </div>
   );
-}
+};
 
 export default App;
