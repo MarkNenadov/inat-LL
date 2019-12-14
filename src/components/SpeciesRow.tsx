@@ -23,10 +23,11 @@ export const SpeciesRow = ( props: SpeciesRowProps ) => {
 
     const classes = useSpeciesRowStyles();
 
+    const commonNameLabel = species.commonName !== "" ? <>({species.commonName})</> : "";
     return (
         <>
             {
-                <p className={ classes.speciesRow }><i>{ species.name }</i> ({ species.commonName })</p>
+                <p className={classes.speciesRow}><i>{species.name}</i> {commonNameLabel}</p>
             }
         </>
     );
