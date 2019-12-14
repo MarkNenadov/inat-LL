@@ -36,8 +36,8 @@ export const ClassListing = ( props: ClassListingProps ) => {
                     distinctClasses.filter( distinctClass => distinctClass === currentClass ).map( className => {
                         let speciesWithinClass = speciesList.filter( (species ) => species.class === className );
                         return (
-                            <>
-                                <p>
+                            <React.Fragment key={ currentClass }>
+                                <p key={ currentClass + "speciesCount" }>
                                     { speciesWithinClass.length }
                                     { " species within "  }
 
@@ -45,8 +45,9 @@ export const ClassListing = ( props: ClassListingProps ) => {
                                 </p>
                                 <OrderListing
                                     speciesList={ speciesWithinClass }
+                                    key={ className + "OrderListing" }
                                 />
-                            </>
+                            </React.Fragment>
                         );
                     })
                 }

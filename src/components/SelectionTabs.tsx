@@ -16,7 +16,7 @@ export const SelectionTabs = (props: SelectionTabsProps ) => {
         <div style={{ clear: "both", paddingBottom: "40px" }}>
             { itemList.map( itemNameFromList => {
                 return (
-                    <div className={ itemNameFromList === currentItemName ? classes.selectedTab : classes.tab } onClick={ () => setCurrentItem( itemNameFromList ) } >
+                    <div key={ itemNameFromList + "tab" } className={ itemNameFromList === currentItemName ? classes.selectedTab : classes.tab } onClick={ () => setCurrentItem( itemNameFromList ) } >
                         { itemNameFromList }
                     </div>
                 )

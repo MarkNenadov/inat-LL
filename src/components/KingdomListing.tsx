@@ -34,9 +34,7 @@ export const KingdomListing = ( props: KingdomListingProps ) => {
                     distinctKingdoms.filter( kingdom => currentKingdom === kingdom ).map( kingdomName => {
                         let filteredSpeciesList : Species[] = speciesList.filter( ( species ) => species.kingdom === kingdomName );
                         return (
-                            <>
-                                <ClassListing speciesList={ filteredSpeciesList } />
-                            </>
+                            <ClassListing speciesList={ filteredSpeciesList }  key={ kingdomName + "ClassListing" }/>
                         );
                     })
                 }
