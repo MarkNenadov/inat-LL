@@ -3,6 +3,7 @@ import { SpeciesContainerProps } from "./BaseProps";
 import { SpeciesRow } from "./SpeciesRow";
 import { OrderListing } from "./OrderListing";
 import { SelectionTabs } from "./SelectionTabs";
+import { Species } from "../model/Species";
 
 interface ClassListingProps extends SpeciesContainerProps {}
 
@@ -34,7 +35,7 @@ export const ClassListing = ( props: ClassListingProps ) => {
                 {
                     //@ts-ignore
                     distinctClasses.filter( distinctClass => distinctClass === currentClass ).map( className => {
-                        let speciesWithinClass = speciesList.filter( (species ) => species.class === className );
+                        let speciesWithinClass = Species.filterByClass( speciesList, className );
                         return (
                             <React.Fragment key={ currentClass }>
                                 <p key={ currentClass + "speciesCount" }>

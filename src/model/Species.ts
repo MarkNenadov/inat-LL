@@ -21,4 +21,16 @@ export class Species {
         //@ts-ignore
         return species.sort( ( a : Species, b : Species ) : number => ( '' + a.name).localeCompare( b.name ) );
     }
+
+    static filterByKingdom( speciesList: Species[], kingdomName: string ) {
+        return speciesList.filter( ( species ) => species.kingdom === kingdomName )
+    }
+
+    static filterByClass(speciesList: Species[], className: string) {
+        return speciesList.filter( (species ) => species.class === className );
+    }
+
+    static filterByOrder(speciesList: Species[], orderName: string) {
+        return speciesList.filter( (species ) => species.order === orderName );
+    }
 }

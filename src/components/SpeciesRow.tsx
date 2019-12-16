@@ -1,8 +1,6 @@
 import React from 'react';
-import { SpeciesContainerProps } from "./BaseProps";
 import { Species } from "../model/Species";
 import { makeStyles, Theme } from "@material-ui/core";
-import { useOrderListingStyles } from "./OrderListingStyles";
 
 interface SpeciesRowProps {
     species: Species;
@@ -23,11 +21,11 @@ export const SpeciesRow = ( props: SpeciesRowProps ) => {
 
     const classes = useSpeciesRowStyles();
 
-    const commonNameLabel = species.commonName !== "" ? <>({species.commonName})</> : "";
+    const commonNameLabel = species.commonName !== "" ? <>({ species.commonName })</> : "";
     return (
         <>
             {
-                <p className={classes.speciesRow}><i>{species.name}</i> {commonNameLabel}</p>
+                <p className={ classes.speciesRow }><i>{ species.name }</i> { commonNameLabel }</p>
             }
         </>
     );

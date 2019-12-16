@@ -18,7 +18,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
             {
                 //@ts-ignore
                 [...orderList].map( orderName => {
-                    const speciesWithinOrder = speciesList.filter( (species ) => species.order === orderName );
+                    const speciesWithinOrder =  Species.filterByOrder( speciesList, orderName );
                     return (
                         <div className={classes.orderBox} key={ orderName }>
                             <h4>{orderName}</h4>

@@ -32,9 +32,11 @@ export const KingdomListing = ( props: KingdomListingProps ) => {
                 {
                     //@ts-ignore
                     distinctKingdoms.filter( kingdom => currentKingdom === kingdom ).map( kingdomName => {
-                        let filteredSpeciesList : Species[] = speciesList.filter( ( species ) => species.kingdom === kingdomName );
                         return (
-                            <ClassListing speciesList={ filteredSpeciesList }  key={ kingdomName + "ClassListing" }/>
+                            <ClassListing
+                                speciesList={ Species.filterByKingdom( speciesList, kingdomName ) }
+                                key={ kingdomName + "ClassListing" }
+                            />
                         );
                     })
                 }
