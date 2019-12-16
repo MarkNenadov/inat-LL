@@ -16,4 +16,9 @@ export class Species {
         this.name = rowData[12];
         this.commonName = rowData[22];
     }
+
+    static sortByName( species: Species[] ) {
+        //@ts-ignore
+        return species.sort( ( a : Species, b : Species ) : number => ( '' + a.name).localeCompare( b.name ) );
+    }
 }

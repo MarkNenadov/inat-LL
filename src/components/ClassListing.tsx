@@ -9,7 +9,7 @@ interface ClassListingProps extends SpeciesContainerProps {}
 export const ClassListing = ( props: ClassListingProps ) => {
     const { speciesList } = props;
 
-    const classList = speciesList.map( species => species.class );
+    const classList = speciesList.map( species => species.class ).sort();
 
     const [ currentClass, setCurrentClass ] = useState( classList[0] );
 

@@ -13,10 +13,15 @@ export const SelectionTabs = (props: SelectionTabsProps ) => {
     const classes = useSelectionTabStyles();
 
     return (
-        <div style={{ clear: "both", paddingBottom: "40px" }}>
+        <div className={ classes.selectionTabsContainer }>
             { itemList.map( itemNameFromList => {
+                const classNameToUse = itemNameFromList === currentItemName ? classes.selectedTab : classes.tab;
                 return (
-                    <div key={ itemNameFromList + "tab" } className={ itemNameFromList === currentItemName ? classes.selectedTab : classes.tab } onClick={ () => setCurrentItem( itemNameFromList ) } >
+                    <div
+                        key={ itemNameFromList + "tab" }
+                        className={ classNameToUse }
+                        onClick={ () => setCurrentItem( itemNameFromList ) }
+                    >
                         { itemNameFromList }
                     </div>
                 )

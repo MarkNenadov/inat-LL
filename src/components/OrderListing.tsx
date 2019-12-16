@@ -2,7 +2,6 @@ import React from 'react';
 import { SpeciesContainerProps } from "./BaseProps";
 import { SpeciesRow } from "./SpeciesRow";
 import { Species } from "../model/Species";
-import { useSelectionTabStyles } from "./SelectionTabStyles";
 import { useOrderListingStyles } from "./OrderListingStyles";
 
 interface OrderListingProps extends SpeciesContainerProps {}
@@ -12,7 +11,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
 
     const classes = useOrderListingStyles();
 
-    let orderList = new Set( speciesList.map( species => species.order ) );
+    let orderList = new Set( speciesList.map( species => species.order ).sort() );
 
     return (
         <div style={{ display: "flex", flexWrap: "wrap", width: "95%" }}>
@@ -27,8 +26,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
                             { " species " }
 
                             {
-                                //@ts-ignorez
-                                speciesWithinOrder.sort( (a : Species, b : Species) : number => ('' + a.name.attr).localeCompare(b.name.attr) ).map( (species ) => {
+                                Species.sortByName( speciesWithinOrder ).map( ( species ) => {
                                     return <SpeciesRow species={ species } key={ species.name } />
                                 } )
                             }
