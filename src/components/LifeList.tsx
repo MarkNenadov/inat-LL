@@ -13,7 +13,7 @@ export const LifeList = ( props: LifeListProps ) => {
             <h1>{fullName}'s <a href="http://inaturalist.ca/">iNaturalist</a> Life List</h1>
             <p>Total species: { speciesList.length }</p>
             <KingdomListing speciesList={speciesList} />
-            <p>Source code (JavaScript/TypeScript/React) hosted at <a href="https://github.com/MarkNenadov/inat-LL/">github.com/MarkNenadov/inat-LL/</a></p>
+            <p>Source code (JavaScript/TypeScript/React): <a href="https://github.com/MarkNenadov/inat-LL/">github.com/MarkNenadov/inat-LL/</a></p>
         </div>
     );
 };

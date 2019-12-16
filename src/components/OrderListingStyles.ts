@@ -7,6 +7,7 @@ export const useOrderListingStyles = makeStyles(  (theme: Theme ) => ({
         marginBottom: "12px",
         paddingLeft: "25px",
         paddingRight: "25px",
+        paddingBottom: "10px",
         width: "auto"
     }
 }));
