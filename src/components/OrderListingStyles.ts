@@ -9,5 +9,10 @@ export const useOrderListingStyles = makeStyles(  (theme: Theme ) => ({
         paddingRight: "25px",
         paddingBottom: "10px",
         width: "auto"
+    },
+    orderListingBox: {
+        display: "flex",
+        flexWrap: "wrap",
+        width: "95%"
     }
 }));

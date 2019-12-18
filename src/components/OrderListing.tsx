@@ -14,7 +14,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
     let orderList = new Set( speciesList.map( species => species.order ).sort() );
 
     return (
-        <div style={{ display: "flex", flexWrap: "wrap", width: "95%" }}>
+        <div className={ classes.orderListingBox }>
             {
                 //@ts-ignore
                 [...orderList].map( orderName => {
