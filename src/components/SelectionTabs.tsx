@@ -15,12 +15,14 @@ export const SelectionTabs = (props: SelectionTabsProps ) => {
     return (
         <div className={ classes.selectionTabsContainer }>
             { itemList.map( itemNameFromList => {
-                const classNameToUse = itemNameFromList === currentItemName ? classes.selectedTab : classes.tab;
+                const itemNameStripped = itemNameFromList.split( " [")[0];
+
+                const classNameToUse = itemNameStripped === currentItemName ? classes.selectedTab : classes.tab;
                 return (
                     <div
-                        key={ itemNameFromList + "tab" }
+                        key={ itemNameStripped + "tab" }
                         className={ classNameToUse }
-                        onClick={ () => setCurrentItem( itemNameFromList ) }
+                        onClick={ () => setCurrentItem( itemNameStripped ) }
                     >
                         { itemNameFromList }
                     </div>

@@ -21,7 +21,7 @@ export const KingdomListing = ( props: KingdomListingProps ) => {
             <SelectionTabs
                 setCurrentItem={ setCurrentKingdom }
                 currentItemName={ currentKingdom }
-                itemList={ distinctKingdoms }
+                itemList={ distinctKingdoms.map( kingdomName => kingdomName + " [" + Species.filterByKingdom( speciesList, kingdomName ).length + " species]" ) }
             />
 
             <div style={{clear: "both"}}>
