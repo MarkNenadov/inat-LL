@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { SpeciesContainerProps } from "./BaseProps";
-import { SpeciesRow } from "./SpeciesRow";
 import { OrderListing } from "./OrderListing";
 import { SelectionTabs } from "./SelectionTabs";
 import { Species } from "../model/Species";
@@ -18,7 +17,7 @@ export const ClassListing = ( props: ClassListingProps ) => {
         if ( !classList.includes( currentClass )) {
             setCurrentClass( classList[ 0 ] );
         }
-    }, [ speciesList ]);
+    }, [ speciesList, setCurrentClass, classList, currentClass ]);
 
     //@ts-ignore
     let distinctClasses = [...new Set( classList )];
