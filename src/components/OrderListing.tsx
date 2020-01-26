@@ -11,7 +11,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
 
     const classes = useOrderListingStyles();
 
-    let orderList = new Set( speciesList.map( species => species.order ).sort() );
+    const orderList = new Set( speciesList.map( species => species.order ).sort() );
 
     return (
         <div className={ classes.orderListingBox }>
