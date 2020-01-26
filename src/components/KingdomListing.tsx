@@ -3,11 +3,14 @@ import { SpeciesContainerProps } from "./BaseProps";
 import { Species } from "../model/Species";
 import { ClassListing } from "./ClassListing";
 import { SelectionTabs } from "./SelectionTabs";
+import { useKingdomListingStyles } from "./KingdomListingStyles";
 
 interface KingdomListingProps extends SpeciesContainerProps {}
 
 export const KingdomListing = ( props: KingdomListingProps ) => {
     const { speciesList } = props;
+
+    const classes = useKingdomListingStyles();
 
     const [ currentKingdom, setCurrentKingdom ] = useState( "Animalia" );
 
@@ -24,7 +27,7 @@ export const KingdomListing = ( props: KingdomListingProps ) => {
                 itemList={ distinctKingdoms.map( kingdomName => kingdomName + " [" + Species.filterByKingdom( speciesList, kingdomName ).length + " species]" ) }
             />
 
-            <div style={{clear: "both"}}>
+            <div className={ classes.kingdomBox }>
                 {
                     //@ts-ignore
                     distinctKingdoms.filter( kingdom => currentKingdom === kingdom ).map( kingdomName => {
