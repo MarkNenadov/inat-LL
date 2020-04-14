@@ -7,7 +7,7 @@ export class Species {
     private genus: string;
     name: string;
 
-    constructor(rowData: any) {
+    constructor( rowData: any ) {
         this.kingdom = rowData[0];
         this.phylum = rowData[1];
         this.class = rowData[2];
