@@ -17,11 +17,10 @@ export const SelectionTabs = (props: SelectionTabsProps ) => {
             { itemList.map( itemNameFromList => {
                 const itemNameStripped = itemNameFromList.split( " [")[0];
 
-                const classNameToUse = itemNameStripped === currentItemName ? classes.selectedTab : classes.tab;
                 return (
                     <div
                         key={ itemNameStripped + "tab" }
-                        className={ classNameToUse }
+                        className={ itemNameStripped === currentItemName ? classes.selectedTab : classes.tab }
                         onClick={ () => setCurrentItem( itemNameStripped ) }
                     >
                         { itemNameFromList }
