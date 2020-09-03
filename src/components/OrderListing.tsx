@@ -1,6 +1,7 @@
 import React from 'react';
 import { SpeciesContainerProps } from "./BaseProps";
 import { SpeciesRow } from "./SpeciesRow";
+import { OrderListingsWithSubNames } from "./OrderListingsWithSubNames";
 import { Species } from "../model/Species";
 import { useOrderListingStyles } from "./OrderListingStyles";
 
@@ -18,19 +19,29 @@ export const OrderListing = ( props: OrderListingProps ) => {
             {
                 //@ts-ignore
                 [...orderList].map( orderName => {
-                    const speciesWithinOrder =  Species.filterByOrder( speciesList, orderName );
-                    return (
-                        <div className={classes.orderBox} key={ orderName }>
-                            <h4>{orderName}</h4>
+                    const speciesWithinOrder = Species.filterByOrder( speciesList, orderName );
+
+                    const orderSubNames = Species.deriveSubNamesFromOrderSpecies( speciesWithinOrder );
+
+                    return orderSubNames.length === 0 ? (
+                        <div className={ classes.orderBox } key={ orderName }>
+                            <h4>{ orderName }</h4>
                             { speciesWithinOrder.length }
-                            { " species " }
+                            {" species "}
 
                             {
-                                Species.sortByName( speciesWithinOrder ).map( ( species ) => {
-                                    return <SpeciesRow species={ species } key={ species.name } />
+                                Species.sortByName( speciesWithinOrder ).map( (species) => {
+                                    return <SpeciesRow species={species} key={species.name}/>
                                 } )
                             }
                         </div>
+                    ) : (
+                        <OrderListingsWithSubNames
+                            orderName={orderName}
+                            species={speciesWithinOrder}
+                            subNames={orderSubNames}
+
+                        />
                     );
                 })
             }
