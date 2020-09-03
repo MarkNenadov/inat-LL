@@ -11,12 +11,12 @@ export class Species {
     constructor( rowData: any ) {
         this.kingdom = rowData[0];
         this.phylum = rowData[1];
-        this.class = rowData[2];
-        this.order = rowData[5];
-        this.superFamily = rowData[7];
-        this.genus = rowData[11];
-        this.name = rowData[12];
-        this.commonName = rowData[22];
+        this.class = rowData[4];
+        this.order = rowData[9];
+        this.superFamily = rowData[15];
+        this.genus = rowData[22];
+        this.name = rowData[27];
+        this.commonName = rowData[37];
     }
 
     static sortByName( species: Species[] ) {

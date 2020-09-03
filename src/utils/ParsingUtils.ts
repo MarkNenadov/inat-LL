@@ -8,7 +8,6 @@ export const parseSpecies = (csvData: string) => {
     CSV.parse( csvData ).forEach( (row : any) => {
         if ( row[0] !== "kingdom" ) {
             const species = new Species( row );
-
             if ( species.name.includes( " ") ) {
                 result.push( species )
             }
