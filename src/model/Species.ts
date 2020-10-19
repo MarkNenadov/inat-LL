@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 export class Species {
     kingdom: string;
     commonName: string;
@@ -8,7 +9,7 @@ export class Species {
     private genus: string;
     name: string;
 
-    constructor( rowData: any ) {
+    constructor( rowData: string[] ) {
         this.kingdom = rowData[0];
         this.phylum = rowData[1];
         this.class = rowData[4];
@@ -20,44 +21,44 @@ export class Species {
     }
 
     static sortByName( species: Species[] ) {
-        //@ts-ignore
-        return species.sort( ( a : Species, b : Species ) : number => ( '' + a.name).localeCompare( b.name ) );
+        // @ts-ignore
+        return species.sort( ( a: Species, b: Species ): number => ( `${a.name}` ).localeCompare( b.name ) );
     }
 
     static filterByKingdom( speciesList: Species[], kingdomName: string ) {
-        return speciesList.filter( ( species ) => species.kingdom === kingdomName )
+        return speciesList.filter( ( species ) => species.kingdom === kingdomName );
     }
 
     static filterByClass( speciesList: Species[], className: string ) {
-        return speciesList.filter( (species ) => species.class === className );
+        return speciesList.filter( ( species ) => species.class === className );
     }
 
     static filterByOrder( speciesList: Species[], orderName: string ) {
-        return speciesList.filter( (species ) => species.order === orderName );
+        return speciesList.filter( ( species ) => species.order === orderName );
     }
 
     static deriveSubNamesFromOrderSpecies( speciesList: Species[] ) {
-        const subNamesFromSpecies : string[] = speciesList.map( ( species ) => species.nameFromSuperFamily() ).filter( ( nameFromSuperFamily ) => nameFromSuperFamily !== "" );
+        const namesFromSuperFamiles = speciesList.map( ( species ) => species.nameFromSuperFamily() );
+        const speciesSubNames = namesFromSuperFamiles.filter( ( superFamily ) => superFamily !== '' );
 
-        return subNamesFromSpecies.filter( ( item:any, index:any) => subNamesFromSpecies.indexOf( item ) === index );
+        return speciesSubNames.filter( ( item: string, index: number ) => speciesSubNames.indexOf( item ) === index );
     }
 
-    static filterByOrderSubName(speciesList: Species[], orderSubName: string) {
-        if ( orderSubName === "Butterflies" ) {
-            return speciesList.filter( (species ) => species.superFamily === "Papilionoidea" );
+    static filterByOrderSubName( speciesList: Species[], orderSubName: string ) {
+        if ( orderSubName === 'Butterflies' ) {
+            return speciesList.filter( ( species ) => species.superFamily === 'Papilionoidea' );
         }
-        return speciesList.filter( (species ) => species.superFamily !== "Papilionoidea" );
+        return speciesList.filter( ( species ) => species.superFamily !== 'Papilionoidea' );
     }
 
-    public nameFromSuperFamily()  : string {
-        if ( this.order !== "Lepidoptera" ) {
-            return "";
+    public nameFromSuperFamily(): string {
+        if ( this.order !== 'Lepidoptera' ) {
+            return '';
         }
 
-        if ( this.superFamily === "Papilionoidea" ) {
-            return "Butterflies"
-        } else {
-            return "Moths";
+        if ( this.superFamily === 'Papilionoidea' ) {
+            return 'Butterflies';
         }
+        return 'Moths';
     }
 }

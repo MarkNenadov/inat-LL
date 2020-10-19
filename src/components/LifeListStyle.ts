@@ -1,9 +1,9 @@
-import { makeStyles, Theme } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core';
 
-export const useLifeListStyle = makeStyles(  (theme: Theme ) => ({
+export const useLifeListStyle = makeStyles( () => ( {
     lifeListBox: {
-        backgroundColor: "white",
-        width: "auto",
-        padding: "50px"
-    }
-}));
+        backgroundColor: 'white',
+        width: 'auto',
+        padding: '50px',
+    },
+} ) );
