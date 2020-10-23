@@ -19,7 +19,6 @@ export const ClassListing = ( props: ClassListingProps ) => {
         }
     }, [speciesList, setCurrentClass, classList, currentClass] );
 
-    // @ts-ignore
     const distinctClasses = [...new Set( classList )];
     const filteredClasses = distinctClasses.filter( ( distinctClass ) => distinctClass === currentClass );
 
@@ -33,7 +32,6 @@ export const ClassListing = ( props: ClassListingProps ) => {
 
             <div style={{ clear: 'both' }}>
                 {
-                    // @ts-ignore
                     filteredClasses.map( ( className ) => {
                         const speciesWithinClass = Species.filterByClass( speciesList, className );
                         return (
