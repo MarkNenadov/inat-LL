@@ -13,7 +13,6 @@ export const KingdomListing = ( props: KingdomListingProps ) => {
     const [currentKingdom, setCurrentKingdom] = useState( 'Animalia' );
     const kingdomList = new Set( speciesList.map( ( species ) => species.kingdom ) );
 
-    // @ts-ignore
     const distinctKingdoms = [...kingdomList];
     const getKingdomSpeciesLabel = ( kingdomName: string ) => `[${Species.filterByKingdom( speciesList, kingdomName ).length} species]`;
     const tabLables = distinctKingdoms.map( ( kingdomName ) => `${kingdomName} ${getKingdomSpeciesLabel( kingdomName )}` );
