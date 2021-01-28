@@ -20,19 +20,21 @@ export const OrderListing = ( props: OrderListingProps ) => {
                     const sortedSpecies = Species.sortByName( speciesWithinOrder );
 
                     return orderSubNames.length === 0 ? (
-                        <div className="border-solid border-black border w-auto px-3 py-2 mb-5 mr-2" key={ orderName }>
-                            <h4>{ orderName }</h4>
+                        <div className="border-solid border-black border w-auto px-3 py-2 mb-5 mr-2 flex flex-col" key={ orderName }>
+                            <span className="font-bold">{ orderName }</span>
                             { speciesWithinOrder.length }
                             { ' species ' }
 
-                            {
-                                sortedSpecies.map( ( species ) => (
-                                    <SpeciesRow
-                                        species={ species }
-                                        key={ species.name }
-                                    />
-                                ) )
-                            }
+                            <div>
+                                {
+                                    sortedSpecies.map( ( species ) => (
+                                        <SpeciesRow
+                                            species={ species }
+                                            key={ species.name }
+                                        />
+                                    ) )
+                                }
+                            </div>
                         </div>
                     ) : (
                         <OrderListingsWithSubNames

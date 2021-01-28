@@ -1,7 +1,6 @@
 import React from 'react';
 import { KingdomListing } from './listings/KingdomListing';
 import { SpeciesContainerProps } from './BaseProps';
-import { useLifeListStyle } from './LifeListStyle';
 import { config } from '../config';
 
 interface LifeListProps extends SpeciesContainerProps {
@@ -11,19 +10,17 @@ interface LifeListProps extends SpeciesContainerProps {
 export const LifeList = ( props: LifeListProps ) => {
     const { urls } = config;
 
-    const classes = useLifeListStyle();
-
     const { fullName, speciesList } = props;
     return (
-        <div className={ classes.lifeListBox }>
-            <h1>
+        <div className="bg-white w-auto p-12">
+            <span className="font-bold text-9x1">
                 { fullName }
                 { "'s" }
                 { ' ' }
                 <a href={ urls.inaturalist }>iNaturalist</a>
                 { ' ' }
                 Life List
-            </h1>
+            </span>
             <p>
                 Total species:
                 { speciesList.length }

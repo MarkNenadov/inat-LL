@@ -36,7 +36,7 @@ export const ClassListing = ( props: ClassListingProps ) => {
                         const speciesWithinClass = Species.filterByClass( speciesList, className );
                         return (
                             <React.Fragment key={ currentClass }>
-                                <p key={ `${currentClass}speciesCount` }>
+                                <p key={ `${currentClass}speciesCount` } className="p-0.5">
                                     { speciesWithinClass.length }
                                     { ' species within ' }
 
