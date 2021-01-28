@@ -20,8 +20,4 @@ export const useSelectionTabStyles = makeStyles( () => ( {
         margin: '5px',
         fontSize: '1.3em',
     },
-    selectionTabsContainer: {
-        clear: 'both',
-        paddingBottom: '40px',
-    },
 } ) );

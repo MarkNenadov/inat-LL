@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelectionTabStyles } from './SelectionTabStyles';
 import { SelectionTab } from './SelectionTab';
 
 interface SelectionTabsProps {
@@ -11,10 +10,8 @@ interface SelectionTabsProps {
 export const SelectionTabs = ( props: SelectionTabsProps ) => {
     const { itemList, currentItemName, setCurrentItem } = props;
 
-    const classes = useSelectionTabStyles();
-
     return (
-        <div className={ classes.selectionTabsContainer }>
+        <div>
             {
                 itemList.map( ( itemNameFromList ) => (
                     <SelectionTab
