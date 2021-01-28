@@ -1,7 +1,6 @@
 import { Species } from '../../model/Species';
 import { SpeciesRow } from './SpeciesRow';
 import React from 'react';
-import { useOrderListingStyles } from './OrderListingStyles';
 
 interface OrderListingsWithSubNamesProps {
     orderName: string;
@@ -12,8 +11,6 @@ interface OrderListingsWithSubNamesProps {
 export const OrderListingsWithSubNames = ( props: OrderListingsWithSubNamesProps ) => {
     const { orderName, subNames, species } = props;
 
-    const classes = useOrderListingStyles();
-
     return (
         <>
             {
@@ -22,7 +19,7 @@ export const OrderListingsWithSubNames = ( props: OrderListingsWithSubNamesProps
                     const sortedSpecies = Species.sortByName( speciesWithinSubName );
 
                     return (
-                        <div className={ classes.orderBox } key={ orderName + subName }>
+                        <div className="border-solid border-black border w-auto px-3 py-2 mb-5 mr-2" key={ orderName + subName }>
                             <h4>
                                 { orderName }
                                 { ' ' }

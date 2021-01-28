@@ -15,19 +15,24 @@
     "is-core-module": "^2.0.0"
   },
   "devDependencies": {
+    "@marknenadov/noctuidae-eslint-config": "0.1.10",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.17",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "autoprefixer": "10.1.0",
     "eslint": "6.6.0",
-    "@marknenadov/noctuidae-eslint-config": "0.1.10"
+    "postcss": "8.2.2",
+    "postcss-cli": "8.3.1",
+    "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint --fix \"**/*.{tsx,ts}\""
+    "eslint": "eslint --fix \"**/*.{tsx,ts}\"",
+    "watch:css": "postcss src/tailwind.css -o src/index.css"
   },
   "browserslist": {
     "production": [
