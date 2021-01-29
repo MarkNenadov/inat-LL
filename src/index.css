@@ -11480,6 +11480,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xxl {
+  font-size: 2rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -29128,18 +29133,51 @@ video {
   animation: bounce 1s infinite;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.body {
+  align-items: center;
+  align-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  align-items: center;
+  align-content: center;
+  font-family: "Helvetica Neue";
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (min-width: 640px) {
@@ -40084,6 +40122,11 @@ code {
 
   .sm\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-xxl {
+    font-size: 2rem;
     line-height: 1.75rem;
   }
 
@@ -68637,6 +68680,11 @@ code {
     line-height: 1.75rem;
   }
 
+  .md\:text-xxl {
+    font-size: 2rem;
+    line-height: 1.75rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -97184,6 +97232,11 @@ code {
 
   .lg\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-xxl {
+    font-size: 2rem;
     line-height: 1.75rem;
   }
 
@@ -125737,6 +125790,11 @@ code {
     line-height: 1.75rem;
   }
 
+  .xl\:text-xxl {
+    font-size: 2rem;
+    line-height: 1.75rem;
+  }
+
   .xl\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -154284,6 +154342,11 @@ code {
 
   .\32xl\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .\32xl\:text-xxl {
+    font-size: 2rem;
     line-height: 1.75rem;
   }
 

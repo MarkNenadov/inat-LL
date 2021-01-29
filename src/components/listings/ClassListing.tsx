@@ -30,13 +30,13 @@ export const ClassListing = ( props: ClassListingProps ) => {
                 itemList={ distinctClasses }
             />
 
-            <div style={{ clear: 'both' }}>
+            <div className={'clear-both pt-5'}>
                 {
                     filteredClasses.map( ( className ) => {
                         const speciesWithinClass = Species.filterByClass( speciesList, className );
                         return (
                             <React.Fragment key={ currentClass }>
-                                <p key={ `${currentClass}speciesCount` } className="p-0.5">
+                                <p key={ `${currentClass}speciesCount` } className="p-0.5 pb-2">
                                     { speciesWithinClass.length }
                                     { ' species within ' }
 

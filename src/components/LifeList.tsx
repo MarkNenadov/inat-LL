@@ -13,22 +13,22 @@ export const LifeList = ( props: LifeListProps ) => {
     const { fullName, speciesList } = props;
     return (
         <div className="bg-white w-auto p-12">
-            <span className="font-bold text-9x1">
+            <span className="font-bold text-xl lg:text-xxl">
                 { fullName }
                 { "'s" }
                 { ' ' }
-                <a href={ urls.inaturalist }>iNaturalist</a>
+                <a className={'underline'} href={ urls.inaturalist }>iNaturalist</a>
                 { ' ' }
                 Life List
             </span>
-            <p>
+            <p className={'pb-2'}>
                 Total species:
                 { speciesList.length }
             </p>
             <KingdomListing speciesList={ speciesList } />
             <p>
                 Source code (JavaScript/TypeScript/React):
-                <a href={ urls.gitHubProject }>github.com/MarkNenadov/inat-LL/</a>
+                <a className={'underline'} href={ urls.gitHubProject }>github.com/MarkNenadov/inat-LL/</a>
             </p>
         </div>
     );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Species } from '../../model/Species';
-import { useSpeciesRowStyles } from './SpeciesRowStyles';
 
 interface SpeciesRowProps {
     species: Species;
@@ -9,13 +8,11 @@ interface SpeciesRowProps {
 export const SpeciesRow = ( props: SpeciesRowProps ) => {
     const { species } = props;
 
-    const classes = useSpeciesRowStyles();
-
     const commonNameLabel = species.commonName !== '' ? ` (${species.commonName})` : '';
     return (
         <span>
             {
-                <p className={ classes.speciesRow }>
+                <p className={ 'hover:bg-gray-200 text-lg' }>
                     <i>{ species.name }</i>
                     { ' ' }
                     { commonNameLabel }
