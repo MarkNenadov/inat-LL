@@ -11,7 +11,7 @@ export const SelectionTabs = ( props: SelectionTabsProps ) => {
     const { itemList, currentItemName, setCurrentItem } = props;
 
     return (
-        <div className={"flex flex-col lg:flex-row lg:flex-wrap"}>
+        <div className="flex flex-col lg:flex-row lg:flex-wrap">
             {
                 itemList.map( ( itemNameFromList ) => (
                     <SelectionTab

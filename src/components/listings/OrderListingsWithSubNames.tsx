@@ -19,7 +19,10 @@ export const OrderListingsWithSubNames = ( props: OrderListingsWithSubNamesProps
                     const sortedSpecies = Species.sortByName( speciesWithinSubName );
 
                     return (
-                        <div className="border-solid border-black border w-full lg:w-max px-5 py-4 mb-5 mr-2 flex flex-col" key={ orderName + subName }>
+                        <div
+                            className="border-solid border-black border w-full lg:w-max px-5 py-4 mb-5 mr-2 flex flex-col"
+                            key={ orderName + subName }
+                        >
                             <span className={'font-bold'}>
                                 { orderName }
                                 { ' ' }
@@ -28,7 +31,7 @@ export const OrderListingsWithSubNames = ( props: OrderListingsWithSubNamesProps
                                 )
                             </span>
 
-                            <span className={"pb-2"}>                            
+                            <span className="pb-2">
                                 { speciesWithinSubName.length }
                                 { ' species ' }
                                 <div className={'w-full border-solid border-black border'} />
