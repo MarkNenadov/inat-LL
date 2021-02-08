@@ -1,5 +1,5 @@
 import { Species } from '../model/Species';
-import CSV from 'csv-string';
+import * as CSV from 'csv-string';
 
 export const parseSpecies = ( csvData: string ) => {
     const result: Species[] = [];
