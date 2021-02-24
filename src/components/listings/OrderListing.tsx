@@ -25,10 +25,10 @@ export const OrderListing = ( props: OrderListingProps ) => {
                             key={ orderName }
                         >
                             <span className="font-bold">{ orderName }</span>
-                            <span className={'pb-2'}>
+                            <span className={ 'pb-2' }>
                                 { speciesWithinOrder.length }
                                 { ' species ' }
-                                <div className={'w-full border-solid border-black border'} />
+                                <div className={ 'w-full border-solid border-black border' } />
                             </span>
                             <div>
                                 {

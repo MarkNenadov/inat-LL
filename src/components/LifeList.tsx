@@ -17,18 +17,18 @@ export const LifeList = ( props: LifeListProps ) => {
                 { fullName }
                 { "'s" }
                 { ' ' }
-                <a className={'underline'} href={ urls.inaturalist }>iNaturalist</a>
+                <a className={ 'underline' } href={ urls.inaturalist }>iNaturalist</a>
                 { ' ' }
                 Life List
             </span>
-            <p className={'pb-2'}>
+            <p className={ 'pb-2' }>
                 Total species:
                 { speciesList.length }
             </p>
             <KingdomListing speciesList={ speciesList } />
             <p>
                 Source code (JavaScript/TypeScript/React):
-                <a className={'underline'} href={ urls.gitHubProject }>github.com/MarkNenadov/inat-LL/</a>
+                <a className={ 'underline' } href={ urls.gitHubProject }>github.com/MarkNenadov/inat-LL/</a>
             </p>
         </div>
     );

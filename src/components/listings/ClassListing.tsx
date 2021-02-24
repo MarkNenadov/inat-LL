@@ -30,7 +30,7 @@ export const ClassListing = ( props: ClassListingProps ) => {
                 itemList={ distinctClasses }
             />
 
-            <div className={'clear-both pt-5'}>
+            <div className={ 'clear-both pt-5' }>
                 {
                     filteredClasses.map( ( className ) => {
                         const speciesWithinClass = Species.filterByClass( speciesList, className );

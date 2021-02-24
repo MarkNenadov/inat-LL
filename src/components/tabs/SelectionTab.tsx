@@ -19,6 +19,9 @@ export const SelectionTab = ( props: SelectionTabProps ) => {
             key={ `${itemNameStripped}tab` }
             className={ isSelected ? `${tabClasses} bg-green-400`: tabClasses }
             onClick={ () => setCurrentItem( itemNameStripped ) }
+            onKeyDown={ () => setCurrentItem( itemNameStripped ) }
+            role={ 'button' }
+            tabIndex={ 0 }
         >
             { itemName }
         </div>
