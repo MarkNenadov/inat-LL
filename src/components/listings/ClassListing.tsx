@@ -38,7 +38,7 @@ export const ClassListing = ( props: ClassListingProps ) => {
                             <React.Fragment key={ currentClass }>
                                 <p key={ `${currentClass}speciesCount` } className="p-0.5 pb-2">
                                     { speciesWithinClass.length }
-                                    { ' species within ' }
+                                    { ' species within Class ' }
 
                                     { currentClass }
                                 </p>

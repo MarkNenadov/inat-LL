@@ -8,6 +8,8 @@ export class Species {
     superFamily: string;
     private genus: string;
     name: string;
+    url: string;
+    lastSeen: string;
 
     constructor( rowData: string[] ) {
         this.kingdom = rowData[0];
@@ -17,6 +19,8 @@ export class Species {
         this.superFamily = rowData[15];
         this.genus = rowData[22];
         this.name = rowData[27];
+        this.url = rowData[33];
+        this.lastSeen = rowData[35];
         this.commonName = rowData[37];
     }
 
