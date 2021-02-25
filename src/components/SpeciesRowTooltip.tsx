@@ -31,8 +31,16 @@ export const SpeciesRowTooltip = ( props: SpeciesRowTooltipProps ) => {
                             </div>
                             <div>
                                 First Seen:&nbsp;
-                                { species.lastSeen.split( ' ' )[0] }
+                                { species.firstSeen.split( ' ' )[0] }
                             </div>
+                            {
+                                species.firstSeen !== species.lastSeen && (
+                                    <div>
+                                        Last Seen:&nbsp;
+                                        { species.lastSeen.split( ' ' )[0] }
+                                    </div>
+                                )
+                            }
                         </div>
                     </div>
                 )

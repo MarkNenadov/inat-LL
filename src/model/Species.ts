@@ -9,6 +9,7 @@ export class Species {
     private genus: string;
     name: string;
     url: string;
+    firstSeen: string;
     lastSeen: string;
 
     constructor( rowData: string[] ) {
@@ -20,7 +21,8 @@ export class Species {
         this.genus = rowData[22];
         this.name = rowData[27];
         this.url = rowData[33];
-        this.lastSeen = rowData[35];
+        this.firstSeen = rowData[35];
+        this.lastSeen = rowData[36];
         this.commonName = rowData[37];
     }
 
