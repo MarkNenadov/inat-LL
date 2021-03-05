@@ -21,7 +21,7 @@ export const OrderListing = ( props: OrderListingProps ) => {
 
                     return orderSubNames.length === 0 ? (
                         <div
-                            className="border-solid border-black border w-full lg:w-max px-5 py-4 mb-5 mr-2 flex flex-col"
+                            className="border-solid border-black border w-full lg:w-max px-6 py-4 mb-5 mr-2 flex flex-col"
                             key={ orderName }
                         >
                             <span className="font-bold">{ orderName }</span>

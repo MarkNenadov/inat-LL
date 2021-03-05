@@ -6,11 +6,12 @@ export class Species {
     class: string;
     order: string;
     superFamily: string;
+    family: string;
+    tribe: string;
     private genus: string;
     name: string;
     url: string;
-    firstSeen: string;
-    lastSeen: string;
+    dateCreated: string;
 
     constructor( rowData: string[] ) {
         this.kingdom = rowData[0];
@@ -18,11 +19,12 @@ export class Species {
         this.class = rowData[4];
         this.order = rowData[9];
         this.superFamily = rowData[15];
+        this.family = rowData[17];
+        this.tribe = rowData[20];
         this.genus = rowData[22];
         this.name = rowData[27];
         this.url = rowData[33];
-        this.firstSeen = rowData[35];
-        this.lastSeen = rowData[36];
+        this.dateCreated = rowData[35];
         this.commonName = rowData[37];
     }
 

@@ -23,24 +23,49 @@ export const SpeciesRowTooltip = ( props: SpeciesRowTooltipProps ) => {
                             className="flex flex-col"
                         >
                             <div className="font-bold text-lg">
-                                { species.commonName }
-                                &nbsp;
-                                (
-                                { species.name }
+                                { ( species.commonName ) ? (
+                                    <span>
+                                        { species.commonName }
+                                        &nbsp;
+                                        (
+                                        { species.name }
+                                        )
+                                    </span>
+                                ) : (
+                                    <span>
+                                        { species.name }
+                                    </span>
                                 )
-                            </div>
-                            <div>
-                                First Seen:&nbsp;
-                                { species.firstSeen.split( ' ' )[0] }
+                                }
                             </div>
                             {
-                                species.firstSeen !== species.lastSeen && (
+                                !!species.superFamily && (
                                     <div>
-                                        Last Seen:&nbsp;
-                                        { species.lastSeen.split( ' ' )[0] }
+                                        Super Family:&nbsp;
+                                        { species.superFamily }
                                     </div>
                                 )
                             }
+                            {
+                                !!species.family && (
+                                    <div>
+                                        Family:&nbsp;
+                                        { species.family }
+                                    </div>
+                                )
+                            }
+                            {
+                                !!species.tribe && (
+                                    <div>
+                                        Tribe:&nbsp;
+                                        { species.tribe }
+                                    </div>
+                                )
+                            }
+                            <div>
+                                Added to iNaturalist:&nbsp;
+                                { species.dateCreated.split( ' ' )[0] }
+                            </div>
                         </div>
                     </div>
                 )
